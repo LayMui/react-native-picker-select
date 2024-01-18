@@ -65,12 +65,7 @@
         "prettier:all": "prettier --config ./.prettierrc.js --write \"{src,test}/**/*.js\"",
         "lint": "echo \"---Running ESLint---\" && eslint \"src/**/*.{js,jsx}\""
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged",
-            "pre-push": "echo \"---Running ESLint---\" && yarn lint && yarn test"
-        }
-    },
+    
     "jest": {
         "preset": "react-native",
         "setupFiles": [
