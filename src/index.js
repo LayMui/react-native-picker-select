@@ -244,9 +244,9 @@ export default class RNPickerSelect extends PureComponent {
             return;
         }
 
-        if (!showPicker) {
-            Keyboard.dismiss();
-        }
+        // if (!showPicker) {
+        //     Keyboard.dismiss();
+        // }
 
         const animationType =
             modalProps && modalProps.animationType ? modalProps.animationType : 'slide';
@@ -257,7 +257,7 @@ export default class RNPickerSelect extends PureComponent {
             (prevState) => {
                 return {
                     animationType: animate ? animationType : undefined,
-                    showPicker: prevState.showPicker,
+                    showPicker: !prevState.showPicker,
                 };
             },
             () => {
