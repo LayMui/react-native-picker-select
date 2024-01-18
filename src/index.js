@@ -173,13 +173,13 @@ export default class RNPickerSelect extends PureComponent {
     onUpArrow() {
         const { onUpArrow } = this.props;
 
-        //this.togglePicker(false, onUpArrow);
+        this.togglePicker(false, onUpArrow);
     }
 
     onDownArrow() {
         const { onDownArrow } = this.props;
 
-        //        this.togglePicker(false, onDownArrow);
+        this.togglePicker(false, onDownArrow);
     }
 
     onValueChange(value, index) {
@@ -257,7 +257,7 @@ export default class RNPickerSelect extends PureComponent {
             (prevState) => {
                 return {
                     animationType: animate ? animationType : undefined,
-                    showPicker: !prevState.showPicker,
+                    // showPicker: !prevState.showPicker,
                 };
             },
             () => {
@@ -314,6 +314,7 @@ export default class RNPickerSelect extends PureComponent {
                 <View style={[defaultStyles.chevronContainer, style.chevronContainer]}>
                     <TouchableOpacity
                         activeOpacity={onUpArrow ? 0.5 : 1}
+                        testID="up_button"
                         onPress={onUpArrow ? this.onUpArrow : null}
                     >
                         <View
@@ -328,6 +329,7 @@ export default class RNPickerSelect extends PureComponent {
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
+                        testID="down_button"
                         activeOpacity={onDownArrow ? 0.5 : 1}
                         onPress={onDownArrow ? this.onDownArrow : null}
                     >
