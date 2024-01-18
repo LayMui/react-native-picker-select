@@ -257,7 +257,7 @@ export default class RNPickerSelect extends PureComponent {
             (prevState) => {
                 return {
                     animationType: animate ? animationType : undefined,
-                    // showPicker: !prevState.showPicker,
+                    showPicker: prevState.showPicker,
                 };
             },
             () => {
