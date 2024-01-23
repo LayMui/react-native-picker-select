@@ -313,6 +313,9 @@ export default class RNPickerSelect extends PureComponent {
             >
                 <View style={[defaultStyles.chevronContainer, style.chevronContainer]}>
                     <Pressable
+                         style={({ pressed }) => [
+                            { opacity: pressed ? 0.5 : 1.0 }
+                          ]}
                         activeOpacity={onUpArrow ? 0.5 : 1}
                         testID="up_button"
                         onPress={onUpArrow ? this.onUpArrow : null}
@@ -439,6 +442,9 @@ export default class RNPickerSelect extends PureComponent {
         return (
             <View style={[defaultStyles.viewContainer, style.viewContainer]}>
                 <Pressable
+                    style={({ pressed }) => [
+                        { opacity: pressed ? 0.5 : 1.0 }
+                    ]}
                     onPress={() => {
                         this.togglePicker(true);
                     }}
