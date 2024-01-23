@@ -244,9 +244,9 @@ export default class RNPickerSelect extends PureComponent {
             return;
         }
 
-        // if (!showPicker) {
-        //     Keyboard.dismiss();
-        // }
+        if (!showPicker) {
+            Keyboard.dismiss();
+        }
 
         const animationType =
             modalProps && modalProps.animationType ? modalProps.animationType : 'slide';
@@ -438,8 +438,8 @@ export default class RNPickerSelect extends PureComponent {
 
         return (
             <View style={[defaultStyles.viewContainer, style.viewContainer]}>
-                <TouchableOpacity
-                    testID="ios_touchable_wrapper"
+                <View
+                   testID="ios_touchable_wrapper"
                     onPress={() => {
                         this.togglePicker(true);
                     }}
@@ -447,7 +447,7 @@ export default class RNPickerSelect extends PureComponent {
                     {...touchableWrapperProps}
                 >
                     {this.renderTextInputOrChildren()}
-                </TouchableOpacity>
+                </View>
                 <Modal
                     testID="ios_modal"
                     visible={showPicker}
