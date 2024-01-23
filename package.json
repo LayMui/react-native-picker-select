@@ -1,12 +1,12 @@
 {
-    "name": "react-native-picker-select",
-    "version": "9.0.0",
+    "name": "react-native-select-picker-dropdown",
+    "version": "1.0.0",
     "description": "A Picker component for React Native which emulates the native <select> interfaces for each platform",
     "license": "MIT",
-    "author": "Michael Lefkowitz <lefkowitz.michael@gmail.com>",
+    "author": "LayMui",
     "repository": {
         "type": "git",
-        "url": "https://github.com/lawnstarter/react-native-picker-select.git"
+        "url": "https://github.com/LayMui//react-native-select-picker-dropdown.git"
     },
     "main": "src/index.js",
     "keywords": [
@@ -65,7 +65,10 @@
         "prettier:all": "prettier --config ./.prettierrc.js --write \"{src,test}/**/*.js\"",
         "lint": "echo \"---Running ESLint---\" && eslint \"src/**/*.{js,jsx}\""
     },
-    
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+      },
     "jest": {
         "preset": "react-native",
         "setupFiles": [

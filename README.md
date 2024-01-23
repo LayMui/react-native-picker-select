@@ -1,9 +1,4 @@
-# react-native-picker-select
-
-[![npm version](https://badge.fury.io/js/react-native-picker-select.svg)](https://badge.fury.io/js/react-native-picker-select)
-[![npm downloads](https://img.shields.io/npm/dm/react-native-picker-select.svg?style=flat-square)](https://www.npmjs.com/package/react-native-picker-select)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/095f5b1ee137705ed382/test_coverage)](https://codeclimate.com/github/lawnstarter/react-native-picker-select/test_coverage)
-[![CircleCI](https://circleci.com/gh/lawnstarter/react-native-picker-select.svg?style=svg)](https://circleci.com/gh/lawnstarter/react-native-picker-select)
+# react-native-select-picker-dropdown
 
 A Picker component for React Native which emulates the native `<select>` interfaces for iOS and Android
 
@@ -24,7 +19,7 @@ For either platform, you can alternatively pass down a child element of your cho
 This package is built around and depends on [@react-native-picker/picker](https://github.com/react-native-picker/picker). Please make sure you install it correctly (as seen below in installation steps).
 
 ```
-npm install react-native-picker-select
+npm install react-native-select-picker-dropdown
 
 # React Native users
 npm install @react-native-picker/picker
@@ -37,7 +32,7 @@ expo install @react-native-picker/picker
 ### Basic Usage
 
 ```js
-import RNPickerSelect from 'react-native-picker-select';
+import RNPickerSelect from 'react-native-select-picker-dropdown';
 
 export const Dropdown = () => {
     return (
@@ -154,4 +149,3 @@ Test suite included. This component has been used and tested since React Native 
 
 ## License
 
-react-native-picker-select is [MIT licensed](https://github.com/lawnstarter/react-native-picker-select/tree/master/LICENSE) and built with :heart: in Austin, TX by the team at [LawnStarter](https://lawnstarter.com)
