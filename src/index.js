@@ -439,7 +439,7 @@ export default class RNPickerSelect extends PureComponent {
         return (
             <View style={[defaultStyles.viewContainer, style.viewContainer]}>
                 <View
-                   testID="ios_touchable_wrapper"
+                  // testID="ios_touchable_wrapper"
                     onPress={() => {
                         this.togglePicker(true);
                     }}
