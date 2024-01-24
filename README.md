@@ -10,8 +10,6 @@ For either platform, you can alternatively pass down a child element of your cho
 
 ![iOS Example](./ex-ios.gif) ![Android Example](./ex-android.gif)
 
-## [View examples on snack.expo.io](https://snack.expo.io/@lfkwtz/react-native-picker-select)
-
 ## Getting Started
 
 ### Installing
@@ -50,12 +48,7 @@ export const Dropdown = () => {
 
 ### Versioning
 
-| Version       | Notes                                                                                                                                                |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| >=&nbsp;8.0.0 | Uses [@react-native-picker/picker](https://github.com/react-native-picker/picker#readme). React Native 0.60 or above. If using Expo, SDK38 or above. |
-| >=&nbsp;3.0.0 | React v16.3 or above.                                                                                                                                |
-| <&nbsp;3.0.0  | React v16.2 or below.                                                                                                                                |
-
+| Version       | Notes                                                                                                                                             
 ### Props
 
 | Name                                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Details                  |

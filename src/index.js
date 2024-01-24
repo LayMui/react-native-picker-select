@@ -312,7 +312,7 @@ export default class RNPickerSelect extends PureComponent {
                 testID="input_accessory_view"
             >
                 <View style={[defaultStyles.chevronContainer, style.chevronContainer]}>
-                    <Pressable
+                    <TouchableOpacity
                          style={({ pressed }) => [
                             { opacity: pressed ? 0.5 : 1.0 }
                           ]}
@@ -330,7 +330,7 @@ export default class RNPickerSelect extends PureComponent {
                                 onUpArrow ? [defaultStyles.chevronActive, style.chevronActive] : {},
                             ]}
                         />
-                    </Pressable>
+                    </TouchableOpacity>
                     <TouchableOpacity
                         testID="down_button"
                         activeOpacity={onDownArrow ? 0.5 : 1}
@@ -403,7 +403,7 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderTextInputOrChildren() {
-        const { children, style, textInputProps } = this.props;
+        const { children, style, textInputProps} = this.props;
         const { selectedItem } = this.state;
 
         const containerStyle =
@@ -441,7 +441,7 @@ export default class RNPickerSelect extends PureComponent {
 
         return (
             <View style={[defaultStyles.viewContainer, style.viewContainer]}>
-                <Pressable
+                <TouchableOpacity
                     style={({ pressed }) => [
                         { opacity: pressed ? 0.5 : 1.0 }
                     ]}
@@ -452,7 +452,7 @@ export default class RNPickerSelect extends PureComponent {
                     {...touchableWrapperProps}
                 >
                     {this.renderTextInputOrChildren()}
-                </Pressable>
+                </TouchableOpacity>
                 <Modal
                     testID="ios_modal"
                     visible={showPicker}
