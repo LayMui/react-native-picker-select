@@ -173,13 +173,13 @@ export default class RNPickerSelect extends PureComponent {
     onUpArrow() {
         const { onUpArrow } = this.props;
 
-        this.togglePicker(false, onUpArrow);
+       // this.togglePicker(false, onUpArrow);
     }
 
     onDownArrow() {
         const { onDownArrow } = this.props;
 
-        this.togglePicker(false, onDownArrow);
+        //this.togglePicker(false, onDownArrow);
     }
 
     onValueChange(value, index) {
@@ -450,6 +450,7 @@ export default class RNPickerSelect extends PureComponent {
                     }}
                     activeOpacity={1}
                     {...touchableWrapperProps}
+                    {...PickerProps}
                 >
                     {this.renderTextInputOrChildren()}
                 </TouchableOpacity>
