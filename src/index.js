@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Keyboard, Modal, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Keyboard, Modal, Platform, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash.isequal';
 import { Picker } from '@react-native-picker/picker';
@@ -173,13 +173,13 @@ export default class RNPickerSelect extends PureComponent {
     onUpArrow() {
         const { onUpArrow } = this.props;
 
-       // this.togglePicker(false, onUpArrow);
+      //  this.togglePicker(false, onUpArrow);
     }
 
     onDownArrow() {
         const { onDownArrow } = this.props;
 
-        //this.togglePicker(false, onDownArrow);
+       // this.togglePicker(false, onDownArrow);
     }
 
     onValueChange(value, index) {
@@ -313,12 +313,10 @@ export default class RNPickerSelect extends PureComponent {
             >
                 <View style={[defaultStyles.chevronContainer, style.chevronContainer]}>
                     <TouchableOpacity
-                         style={({ pressed }) => [
-                            { opacity: pressed ? 0.5 : 1.0 }
-                          ]}
+                        testID="UpArrow"
                         activeOpacity={onUpArrow ? 0.5 : 1}
-                        testID="up_button"
                         onPress={onUpArrow ? this.onUpArrow : null}
+    
                     >
                         <View
                             style={[
@@ -332,9 +330,10 @@ export default class RNPickerSelect extends PureComponent {
                         />
                     </TouchableOpacity>
                     <TouchableOpacity
-                        testID="down_button"
+                        testID="DownArrow"
                         activeOpacity={onDownArrow ? 0.5 : 1}
                         onPress={onDownArrow ? this.onDownArrow : null}
+
                     >
                         <View
                             style={[
@@ -403,7 +402,7 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderTextInputOrChildren() {
-        const { children, style, textInputProps} = this.props;
+        const { children, style, textInputProps } = this.props;
         const { selectedItem } = this.state;
 
         const containerStyle =
@@ -442,15 +441,12 @@ export default class RNPickerSelect extends PureComponent {
         return (
             <View style={[defaultStyles.viewContainer, style.viewContainer]}>
                 <TouchableOpacity
-                    style={({ pressed }) => [
-                        { opacity: pressed ? 0.5 : 1.0 }
-                    ]}
+                    testID={`${pickerProps.testID}`}
                     onPress={() => {
                         this.togglePicker(true);
                     }}
                     activeOpacity={1}
                     {...touchableWrapperProps}
-                    {...PickerProps}
                 >
                     {this.renderTextInputOrChildren()}
                 </TouchableOpacity>
@@ -471,13 +467,14 @@ export default class RNPickerSelect extends PureComponent {
                         }}
                     />
                     {this.renderInputAccessoryView()}
-                    <View
+                   <View
                         style={[
                             defaultStyles.modalViewBottom,
                             this.isDarkTheme() ? defaultStyles.modalViewBottomDark : {},
                             { height: orientation === 'portrait' ? 215 : 162 },
                             this.isDarkTheme() ? style.modalViewBottomDark : style.modalViewBottom,
                         ]}
+                        testID="ios_modal_bottom"
                     >
                         <Picker
                             testID="ios_picker"
